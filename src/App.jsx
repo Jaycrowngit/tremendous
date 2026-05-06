@@ -1,4 +1,6 @@
 import './index.css';
+import { useState, useEffect } from 'react';
+import AdminPage from './components/AdminPage';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import AboutVision from './components/AboutVision';
@@ -11,6 +13,18 @@ import ContactSection from './components/ContactSection';
 // Import assets
 
 function App() {
+  const [isAdminRoute, setIsAdminRoute] = useState(false);
+
+  useEffect(() => {
+    if (window.location.pathname === '/admin') {
+      setIsAdminRoute(true);
+    }
+  }, []);
+
+  if (isAdminRoute) {
+    return <AdminPage />;
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header/Navigation */}

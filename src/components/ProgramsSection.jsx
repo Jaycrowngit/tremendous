@@ -14,6 +14,16 @@ export const ProgramsSection = ({ flyerImage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+
+    // Save to localStorage
+    const existingData = JSON.parse(localStorage.getItem('tremendous_volunteers') || '[]');
+    const newEntry = {
+      ...formData,
+      date: new Date().toISOString(),
+      id: Date.now().toString()
+    };
+    localStorage.setItem('tremendous_volunteers', JSON.stringify([...existingData, newEntry]));
+
     setTimeout(() => {
       setFormData({ name: '', phone: '', department: '' });
       setShowVolunteerForm(false);
