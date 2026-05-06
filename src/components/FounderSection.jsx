@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import founderImg from '../../image/founder.jpg';
 
 export const FounderSection = () => {
   const founder = {
@@ -50,9 +49,9 @@ export const FounderSection = () => {
             {/* Main Image */}
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <motion.img
-                src={founderImg}
+                src="/image/founder.jpg"
                 alt={founder.name}
-                className="w-full h-[450px] md:h-[550px] lg:h-[600px] object-cover"
+                className="w-full h-[380px] sm:h-[450px] md:h-[550px] lg:h-[600px] object-cover"
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.6 }}
               />

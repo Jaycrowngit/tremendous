@@ -9,14 +9,12 @@ import GallerySection from './components/GallerySection';
 import ContactSection from './components/ContactSection';
 
 // Import assets
-import logoImage from '../image/logo.png';
-import flyerImage from '../image/upcoming.jpeg';
 
 function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header/Navigation */}
-      <Header logo={logoImage} />
+      <Header logo="/image/logo.png" />
 
       {/* Hero Section */}
       <Hero />
@@ -31,7 +29,7 @@ function App() {
       <LeadersSection />
 
       {/* Upcoming Programs with Volunteer Form */}
-      <ProgramsSection flyerImage={flyerImage} />
+      <ProgramsSection flyerImage="/image/upcoming.jpeg" />
 
       {/* Gallery */}
       <GallerySection />

@@ -29,7 +29,7 @@ export const GallerySection = () => {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
           {galleryItems.map((item, i) => (
             <motion.div
               key={item.id}
@@ -40,7 +40,7 @@ export const GallerySection = () => {
               onClick={() => setSelectedImage(item)}
               whileHover={{ y: -5 }}
               className={`group relative overflow-hidden rounded-xl shadow-[0_2px_15px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] cursor-pointer transition-all duration-400 border border-navy-900/5 ${
-                i === 0 || i === 5 || i === 9 ? 'row-span-2 h-[400px] md:h-[500px]' : 'h-[200px] md:h-[240px]'
+                i === 0 || i === 5 || i === 9 ? 'row-span-2 h-[320px] sm:h-[400px] md:h-[500px]' : 'h-[150px] sm:h-[200px] md:h-[240px]'
               }`}
             >
               <motion.img src={item.img} alt="Gallery" className="w-full h-full object-cover" whileHover={{ scale: 1.08 }} transition={{ duration: 0.5 }} />

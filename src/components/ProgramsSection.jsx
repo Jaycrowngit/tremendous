@@ -46,8 +46,8 @@ export const ProgramsSection = ({ flyerImage }) => {
           {/* Interaction */}
           <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="flex flex-col justify-center space-y-8">
             <div>
-              <span className="text-gold-500 text-xs tracking-[0.3em] uppercase font-semibold block mb-4">Serving in Excellence</span>
-              <h3 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 leading-tight">Join the Sound of Worship</h3>
+              <span className="text-gold-500 text-xs tracking-[0.3em] uppercase font-semibold block mb-4">Volunteers'</span>
+              <h3 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 leading-tight">Want To Part Of The Ministry</h3>
               <div className="h-[3px] w-14 bg-gradient-to-r from-gold-500 to-tan-600 mt-6 rounded-full" />
             </div>
 

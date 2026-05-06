@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import bgImage from '../../image/background.jpg';
 
 export const Hero = () => {
   return (
@@ -7,7 +6,7 @@ export const Hero = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${bgImage})` }}
+        style={{ backgroundImage: `url('/image/background.jpg')` }}
       />
 
       {/* White Gradient Overlays — keeps it bright and clean */}
@@ -43,7 +42,7 @@ export const Hero = () => {
 
         {/* Main Headline */}
         <motion.h1
-          className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] font-serif font-bold leading-[0.95] mb-8"
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] font-serif font-bold leading-[0.95] mb-8"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 1 }}

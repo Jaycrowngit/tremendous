@@ -28,7 +28,7 @@ export const LeadersSection = () => {
           {leaders.map((leader, i) => (
             <motion.div key={leader.id} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.15, duration: 0.6 }} viewport={{ once: true }}
               onHoverStart={() => setHoveredId(leader.id)} onHoverEnd={() => setHoveredId(null)} className="group">
-              <div className="relative overflow-hidden rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-400 h-[480px] md:h-[540px] border border-navy-900/5">
+              <div className="relative overflow-hidden rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.1)] transition-all duration-400 h-[400px] sm:h-[480px] md:h-[540px] border border-navy-900/5">
                 <motion.img src={leader.img} alt={leader.name} className="w-full h-full object-cover" whileHover={{ scale: 1.06 }} transition={{ duration: 0.5 }} />
                 <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-navy-900/80 via-navy-900/40 to-transparent z-10" />
                 <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold-500 to-tan-600 z-20" />
