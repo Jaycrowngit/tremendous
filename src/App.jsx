@@ -14,7 +14,7 @@ import flyerImage from '../image/upcoming.jpeg';
 
 function App() {
   return (
-    <div className="min-h-screen bg-cream selection:bg-tan-600 selection:text-white">
+    <div className="min-h-screen bg-white">
       {/* Header/Navigation */}
       <Header logo={logoImage} />
 

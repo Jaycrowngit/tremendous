@@ -5,9 +5,7 @@ export const AboutVision = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.2 },
     },
   };
 
@@ -16,17 +14,18 @@ export const AboutVision = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.8, ease: 'easeOut' },
     },
   };
 
   return (
-    <section id="about" className="py-28 bg-gradient-to-b from-cream via-white to-cream px-4 md:px-8 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl -mr-48"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-navy-900/5 rounded-full blur-3xl -ml-48"></div>
+    <section id="about" className="py-24 md:py-32 bg-white px-4 md:px-8 relative overflow-hidden">
+      {/* Subtle Decorative Accents */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-gold-500/[0.03] to-transparent rounded-full -mr-64 -mt-64" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-navy-900/[0.02] to-transparent rounded-full -ml-64 -mb-64" />
 
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -34,26 +33,23 @@ export const AboutVision = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="inline-block mb-4">
-            <span className="text-gold-500 font-serif text-sm tracking-widest uppercase">Our Heart</span>
-          </div>
-          <h2 
-            className="text-5xl md:text-6xl font-serif text-navy-900 mb-6"
-          >
+          <span className="text-gold-500 text-xs tracking-[0.3em] uppercase font-semibold">Our Heart</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-navy-900 mt-3 mb-5">
             Vision & Mission
           </h2>
-          <div className="h-1 w-32 bg-gradient-to-r from-gold-500 to-tan-600 mx-auto mb-8"></div>
-          <motion.p 
+          <div className="h-[3px] w-16 bg-gradient-to-r from-gold-500 to-tan-600 mx-auto mb-8 rounded-full" />
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-gray-600 text-xl max-w-2xl mx-auto italic font-light"
+            className="text-navy-900/40 text-base md:text-lg max-w-2xl mx-auto italic font-light"
           >
             "Sing to the Lord a new song; sing to the Lord, all the earth." — Psalm 96:1
           </motion.p>
         </motion.div>
 
+        {/* Cards Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -64,92 +60,83 @@ export const AboutVision = () => {
           {/* Vision Card */}
           <motion.div
             variants={cardVariants}
-            whileHover={{ y: -8 }}
-            className="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 bg-white backdrop-blur-sm border border-gold-500/20"
+            whileHover={{ y: -6 }}
+            className="group relative bg-white rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-400 border border-navy-900/5 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-gold-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
-            {/* Accent Top Border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-500 to-tan-600"></div>
-            
-            <div className="relative p-8 md:p-12 z-10">
-              <motion.div 
-                className="mb-6 inline-block"
-                whileHover={{ rotate: 10 }}
-              >
-                <div className="p-4 bg-gold-500/10 rounded-xl">
-                  <svg className="w-8 h-8 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            {/* Top Accent */}
+            <div className="h-1 bg-gradient-to-r from-gold-500 to-tan-600" />
+
+            <div className="p-8 md:p-10">
+              {/* Icon */}
+              <motion.div className="mb-6" whileHover={{ rotate: 8 }}>
+                <div className="w-14 h-14 bg-gradient-to-br from-gold-500/10 to-gold-500/5 rounded-xl flex items-center justify-center">
+                  <svg className="w-7 h-7 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
                 </div>
               </motion.div>
-              
-              <h3 className="text-3xl md:text-4xl font-serif text-navy-900 mb-4 leading-tight">
-                Vision
-              </h3>
-              
-              <div className="w-12 h-1 bg-gradient-to-r from-gold-500 to-tan-600 mb-6"></div>
-              
-              <p className="text-gray-700 text-lg leading-relaxed mb-6 font-light">
+
+              <h3 className="text-2xl md:text-3xl font-serif text-navy-900 mb-4">Vision</h3>
+              <div className="h-[2px] w-10 bg-gradient-to-r from-gold-500 to-tan-600 mb-6 rounded-full" />
+
+              <p className="text-navy-900/55 text-base leading-relaxed mb-8 font-light">
                 To raise a generation of worshippers who minister in spirit and truth, becoming vessels through which the divine presence flows into the earth.
               </p>
 
-              <motion.p 
-                className="text-gold-500 font-serif italic text-base leading-relaxed"
+              <motion.div
+                className="pt-6 border-t border-navy-900/5"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                "He chose David his servant... to shepherd Jacob his people."
-                <br />
-                <span className="text-sm">— Psalm 78:70-71</span>
-              </motion.p>
+                <p className="text-gold-500/80 font-serif italic text-sm leading-relaxed">
+                  "He chose David his servant... to shepherd Jacob his people."
+                  <br />
+                  <span className="text-navy-900/30 text-xs not-italic">— Psalm 78:70-71</span>
+                </p>
+              </motion.div>
             </div>
           </motion.div>
 
           {/* Mission Card */}
           <motion.div
             variants={cardVariants}
-            whileHover={{ y: -8 }}
-            className="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300 bg-white backdrop-blur-sm border border-gold-500/20"
+            whileHover={{ y: -6 }}
+            className="group relative bg-white rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] transition-all duration-400 border border-navy-900/5 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-gold-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
-            {/* Accent Top Border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-tan-600 to-gold-500"></div>
-            
-            <div className="relative p-8 md:p-12 z-10">
-              <motion.div 
-                className="mb-6 inline-block"
-                whileHover={{ rotate: 10 }}
-              >
-                <div className="p-4 bg-gold-500/10 rounded-xl">
-                  <svg className="w-8 h-8 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            {/* Top Accent */}
+            <div className="h-1 bg-gradient-to-r from-tan-600 to-gold-500" />
+
+            <div className="p-8 md:p-10">
+              {/* Icon */}
+              <motion.div className="mb-6" whileHover={{ rotate: 8 }}>
+                <div className="w-14 h-14 bg-gradient-to-br from-gold-500/10 to-gold-500/5 rounded-xl flex items-center justify-center">
+                  <svg className="w-7 h-7 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
               </motion.div>
-              
-              <h3 className="text-3xl md:text-4xl font-serif text-navy-900 mb-4 leading-tight">
-                Mission
-              </h3>
-              
-              <div className="w-12 h-1 bg-gradient-to-r from-tan-600 to-gold-500 mb-6"></div>
-              
-              <p className="text-gray-700 text-lg leading-relaxed mb-6 font-light">
+
+              <h3 className="text-2xl md:text-3xl font-serif text-navy-900 mb-4">Mission</h3>
+              <div className="h-[2px] w-10 bg-gradient-to-r from-tan-600 to-gold-500 mb-6 rounded-full" />
+
+              <p className="text-navy-900/55 text-base leading-relaxed mb-8 font-light">
                 Spreading the gospel through prophetic melodies and scriptural praise, colonizing the earth with the atmosphere of heaven through the instrumentality of worship.
               </p>
 
-              <motion.p 
-                className="text-gold-500 font-serif italic text-base leading-relaxed"
+              <motion.div
+                className="pt-6 border-t border-navy-900/5"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                "Sing to the Lord, all the earth."
-                <br />
-                <span className="text-sm">— Psalm 96:1</span>
-              </motion.p>
+                <p className="text-gold-500/80 font-serif italic text-sm leading-relaxed">
+                  "Sing to the Lord, all the earth."
+                  <br />
+                  <span className="text-navy-900/30 text-xs not-italic">— Psalm 96:1</span>
+                </p>
+              </motion.div>
             </div>
           </motion.div>
         </motion.div>
