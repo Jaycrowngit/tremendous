@@ -2,7 +2,7 @@
 
 A beautiful, modern website for the Tremendous Voices Music Ministry built with React, Framer Motion, and Tailwind CSS.
 
-## 🎨 Design System
+##  Design System
 
 ### Colors
 - **Navy**: #002147 (Primary)
@@ -14,7 +14,7 @@ A beautiful, modern website for the Tremendous Voices Music Ministry built with 
 - **Headers**: Playfair Display (serif)
 - **Body**: Montserrat (sans-serif)
 
-## 🚀 Features
+##  Features
 
 ### 1. **Hero Section**
 - Full-viewport height with subtle zoom animation
@@ -53,7 +53,7 @@ A beautiful, modern website for the Tremendous Voices Music Ministry built with 
 - Responsive design
 - Scriptural closing message
 
-## 📦 Project Structure
+##  Project Structure
 
 ```
 tremendous/
@@ -80,7 +80,7 @@ tremendous/
 └── .gitignore               # Git ignore file
 ```
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -151,7 +151,7 @@ Edit [ProgramsSection.jsx](src/components/ProgramsSection.jsx#L1) to change:
 - Safari (latest)
 - Edge (latest)
 
-## 🙏 Scripture Integration
+##  Scripture Integration
 
 The site includes scriptural verses throughout:
 - Hero: Psalm 104:33
@@ -160,14 +160,14 @@ The site includes scriptural verses throughout:
 - Programs: Psalm 47:7
 - Contact: Psalm 96:2
 
-## 📝 License
+##  License
 
 All content and design are proprietary to Tremendous Voices Music Ministry.
 
-## 🤝 Support
+## Support
 
 For updates or modifications, contact the development team.
 
 ---
 
-**Built with** ❤️ **using React, Framer Motion, and Tailwind CSS**
+**Built with** **using React, Framer Motion, and Tailwind CSS**
