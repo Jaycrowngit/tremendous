@@ -37,22 +37,24 @@ export const Header = ({ logo }) => {
           href="#"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
-          className="flex items-center gap-3"
+          className="flex items-center gap-2 sm:gap-3"
         >
           <img
             src={logo}
             alt="Tremendous Voices Logo"
             className={`transition-all duration-300 drop-shadow-sm ${
-              scrolled ? 'h-10' : 'h-12 md:h-14'
+              scrolled ? 'h-8 sm:h-10' : 'h-10 sm:h-12 md:h-14'
             }`}
           />
-          <div className="hidden sm:block">
+          <div className="block">
             <p className={`font-serif font-bold leading-tight transition-all duration-300 ${
-              scrolled ? 'text-base' : 'text-lg'
+              scrolled ? 'text-sm sm:text-base' : 'text-base sm:text-lg'
             } text-navy-900`}>
               Tremendous
             </p>
-            <p className="text-[10px] tracking-[0.25em] uppercase text-gold-500 font-semibold">
+            <p className={`transition-all duration-300 ${
+              scrolled ? 'text-[8px]' : 'text-[9px] sm:text-[10px]'
+            } tracking-[0.2em] sm:tracking-[0.25em] uppercase text-gold-500 font-semibold`}>
               Voices Ministry
             </p>
           </div>
