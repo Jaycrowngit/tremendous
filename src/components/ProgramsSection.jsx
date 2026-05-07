@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export const ProgramsSection = ({ flyerImage }) => {
   const [showVolunteerForm, setShowVolunteerForm] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', department: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
@@ -11,24 +12,53 @@ export const ProgramsSection = ({ flyerImage }) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
 
-    // Save to localStorage
-    const existingData = JSON.parse(localStorage.getItem('tremendous_volunteers') || '[]');
-    const newEntry = {
-      ...formData,
-      date: new Date().toISOString(),
-      id: Date.now().toString()
-    };
-    localStorage.setItem('tremendous_volunteers', JSON.stringify([...existingData, newEntry]));
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "29e74b1a-1411-4688-90f0-af3fe21598a6",
+          ...formData,
+          subject: `New Volunteer Registration: ${formData.name}`,
+          from_name: "Tremendous Voices Portal",
+        }),
+      });
 
-    setTimeout(() => {
-      setFormData({ name: '', phone: '', department: '' });
-      setShowVolunteerForm(false);
-      setSubmitted(false);
-    }, 2000);
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        
+        // Keep local backup for Admin Page
+        const existingData = JSON.parse(localStorage.getItem('tremendous_volunteers') || '[]');
+        const newEntry = {
+          ...formData,
+          date: new Date().toISOString(),
+          id: Date.now().toString()
+        };
+        localStorage.setItem('tremendous_volunteers', JSON.stringify([...existingData, newEntry]));
+
+        setTimeout(() => {
+          setFormData({ name: '', phone: '', department: '' });
+          setShowVolunteerForm(false);
+          setSubmitted(false);
+        }, 3000);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Submission failed. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -54,10 +84,10 @@ export const ProgramsSection = ({ flyerImage }) => {
           </motion.div>
 
           {/* Interaction */}
-          <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="flex flex-col justify-center space-y-8">
+          <motion.div id="volunteer-section" initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="flex flex-col justify-center space-y-8">
             <div>
               <span className="text-gold-500 text-xs tracking-[0.3em] uppercase font-semibold block mb-4">Volunteers'</span>
-              <h3 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 leading-tight">Want To Part Of The Ministry</h3>
+              <h3 className="text-3xl md:text-4xl font-serif font-bold text-navy-900 leading-tight">Want To Be Part Of The Ministry</h3>
               <div className="h-[3px] w-14 bg-gradient-to-r from-gold-500 to-tan-600 mt-6 rounded-full" />
             </div>
 
@@ -109,9 +139,9 @@ export const ProgramsSection = ({ flyerImage }) => {
                       Thank you! We'll be in touch soon.
                     </motion.div>
                   ) : (
-                    <motion.button type="submit" whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}
-                      className="w-full bg-gradient-to-r from-gold-500 to-tan-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 text-sm">
-                      Submit Registration
+                    <motion.button type="submit" disabled={isSubmitting} whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}
+                      className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 text-sm ${isSubmitting ? 'bg-navy-900/10 text-navy-900/40 cursor-not-allowed' : 'bg-gradient-to-r from-gold-500 to-tan-600 text-white hover:shadow-lg'}`}>
+                      {isSubmitting ? 'Sending...' : 'Submit Registration'}
                     </motion.button>
                   )}
                 </motion.form>

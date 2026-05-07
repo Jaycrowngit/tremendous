@@ -95,12 +95,12 @@ export const Hero = () => {
           className="pt-10 flex flex-col sm:flex-row gap-4 justify-center"
         >
           <motion.a
-            href="#programs"
+            href="#volunteer-section"
             whileHover={{ scale: 1.05, boxShadow: '0 20px 50px rgba(212, 175, 55, 0.3)' }}
             whileTap={{ scale: 0.96 }}
             className="group px-10 py-4 bg-gradient-to-r from-navy-900 to-navy-900/90 text-white text-base font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center gap-2"
           >
-            Experience the Sound
+            Join the Team
             <motion.svg
               className="w-4 h-4"
               fill="none"
