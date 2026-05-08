@@ -98,7 +98,7 @@ export const Hero = () => {
             href="#volunteer-section"
             whileHover={{ scale: 1.05, boxShadow: '0 20px 50px rgba(212, 175, 55, 0.3)' }}
             whileTap={{ scale: 0.96 }}
-            className="group px-10 py-4 bg-gradient-to-r from-navy-900 to-navy-900/90 text-white text-base font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center justify-center gap-2"
+            className="group px-10 py-4 bg-gradient-to-r from-navy-900 to-navy-900/90 text-white text-base font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-start justify-center gap-2, margin-right-0rem"
           >
             Join the Team
             <motion.svg
@@ -126,12 +126,12 @@ export const Hero = () => {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-1 left-2/4 -translate-x-1/2 z-20"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2.5, repeat: Infinity }}
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-navy-900/30 text-[10px] tracking-[0.2em] uppercase font-medium">Scroll</span>
+          <span className="text-navy-900/30 text-[10px] tracking-[0.2em] uppercase font-medium"></span>
           <motion.div
             className="w-6 h-10 border-2 border-navy-900/20 rounded-full flex justify-center pt-2"
             animate={{ opacity: [0.4, 0.8, 0.4] }}
