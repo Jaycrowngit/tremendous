@@ -142,14 +142,14 @@ export const Header = ({ logo }) => {
                 </motion.a>
               ))}
               <motion.a
-                href="#contact"
+                href="https://chat.whatsapp.com/B5yKMsaeJXU7ggWZK05k8V"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-3 mx-4 px-6 py-3 bg-gradient-to-r from-navy-900 to-navy-900/90 text-gold-500 text-sm font-semibold rounded-full text-center shadow-md"
               >
-                Get in Touch
+            Join Our Community
               </motion.a>
             </div>
           </motion.div>
