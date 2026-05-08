@@ -4,8 +4,8 @@ export const ContactSection = () => {
   const socialLinks = [
     { icon: 'facebook', url: 'https://www.facebook.com/share/1AaQvxLZ8k/', label: 'Facebook' },
     { icon: 'instagram', url: 'https://www.instagram.com/horlardohkun?igsh=MWh0NXQzbzZmdndicw==', label: 'Instagram' },
-   // { icon: 'youtube', url: 'https://www.youtube.com/tremendousvoices', label: 'YouTube' },
-    { icon: 'tiktok', url: 'https://www.tiktok.com/highbeekay55', label: 'TikTok' },
+    { icon: 'youtube', url: 'https://youtube.com/@oladokunbukunmi9561?si=-xcf-01JyBXxgpDD', label: 'YouTube' },
+    { icon: 'tiktok', url: 'https://www.tiktok.com/@highbeekay55?_r=1&_t=ZS-96Bxb2jSxNd', label: 'TikTok' },
   ];
 
   const contactItems = [
