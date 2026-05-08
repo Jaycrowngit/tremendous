@@ -5,9 +5,9 @@ export const LeadersSection = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
   const leaders = [
-    { id: 1, name: "Min. John Doe", role: "Visionary Lead", scripture: "Lead with vision and faith", img: "/image/background.jpg" },
-    { id: 2, name: "Min. Jane Smith", role: "Manager", scripture: "Direct worship with excellence", img: "/image/gly-4.jpg" },
-    { id: 3, name: "Deacon James", role: "Technical & Event Lead", scripture: "Amplify the message of truth", img: "/image/gly-01.jpg" },
+    { id: 1, name: "Oladokun Oluwabukunmi", role: "Visionary Lead", scripture: "Lead with vision and faith", img: "/image/background.jpg" },
+    { id: 2, name: "Oladokun Victoria", role: "Secretary", scripture: "Direct worship with excellence", img: "/image/secretary.jpg" },
+    { id: 3, name: "John Adeoye", role: "Media Lead", scripture: "Amplify the message of truth", img: "/image/jayc.jpg" },
   ];
 
   return (

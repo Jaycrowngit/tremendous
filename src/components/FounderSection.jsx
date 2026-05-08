@@ -5,8 +5,13 @@ export const FounderSection = () => {
     name: "Oladokun Oluwabukunmi",
     alias: "HIGHBEEKAY",
     title: "Convener & Founder",
-    bio: "A man of God with over 25 years of ministry experience. Bishop David established Tremendous Voices to create a platform where worship becomes a transformative force in nations. His passion for prophetic worship has ignited a movement that continues to shape communities and transform lives across the globe.",
-    extendedBio: "Under his leadership, Tremendous Voices has grown from a small prayer group into a global worship movement, touching hearts in multiple nations. His unwavering commitment to excellence in worship and deep-rooted faith have become the foundation upon which this ministry stands.",
+    bioParagraphs: [
+      "A minister of God with over 10 years of ministry experience, Minstrel Oladokun Oluwabukunmi (HIGHBEEKAY) established TREMENDOUS VOICES MUSIC MINISTRY in the year 2017. This ministry is built on a foundation where worship becomes a transformative force in nations and a catalyst for divine encounters.",
+      "His passion for prophetic worship has ignited a movement that continues to shape communities and transform lives across the globe. Through his leadership, countless souls have experienced the healing and liberating power of worship in its purest form.",
+      "Under his vision, Tremendous Voices has grown from a small prayer group into a global worship movement, touching hearts in multiple nations. His unwavering commitment to excellence in worship and deep-rooted faith have become the foundation upon which this ministry stands, creating an atmosphere where heaven and earth intersect.",
+      "In the year 2018/2019, the Lord gave him a vision tagged UNQUESTIONABLE GOD,a quarterly praise program where believers come together to praise and pray in corporate worship. The vision was birthed out of a desire to create a platform for people to experience the transformative power of worship and prayer in a genuine, unhindered setting.",
+      "Through UNQUESTIONABLE GOD, Tremendous Voices has been able to foster a sense of unity and spiritual growth among its members, while also reaching out to the wider community with the message of God's love and faithfulness. This initiative has become a beacon of hope, drawing thousands to experience the majesty of worship and the presence of the Holy Spirit."
+    ],
     quote: "Worship is not what we do; it's who we become in His presence.",
   };
 
@@ -107,13 +112,21 @@ export const FounderSection = () => {
             {/* Accent Line */}
             <div className="h-[3px] w-14 bg-gradient-to-r from-gold-500 to-tan-600 mb-8 rounded-full" />
 
-            {/* Bio */}
-            <p className="text-navy-900/60 text-base md:text-lg leading-relaxed mb-5 font-light">
-              {founder.bio}
-            </p>
-            <p className="text-navy-900/50 text-base leading-relaxed mb-8 font-light">
-              {founder.extendedBio}
-            </p>
+            {/* Bio Paragraphs */}
+            <div className="space-y-5 mb-8">
+              {founder.bioParagraphs.map((paragraph, index) => (
+                <motion.p
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="text-navy-900/60 text-base md:text-lg leading-relaxed font-light"
+                >
+                  {paragraph}
+                </motion.p>
+              ))}
+            </div>
 
             {/* Decorative Scripture Card */}
             <motion.div
