@@ -100,8 +100,8 @@ export const Hero = () => {
             whileTap={{ scale: 0.96 }}
             className="group px-10 py-4 bg-gradient-to-r from-navy-900 to-navy-900/90 text-white text-base font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-start justify-center gap-2, margin-right-0rem"
           >
-            Join the Team
-            <motion.svg
+           Join As Volunteers'
+            {/* <motion.svg
               className="w-4 h-4"
               fill="none"
               stroke="currentColor"
@@ -110,7 +110,7 @@ export const Hero = () => {
               transition={{ duration: 1.5, repeat: Infinity }}
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </motion.svg>
+            </motion.svg> */}
           </motion.a>
 
           <motion.a
